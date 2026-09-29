@@ -2,7 +2,7 @@
   "name": "MikeDoku",
   "short_name": "MikeDoku",
   "description": "Sudoku with 8 levels, from Beginner to Master.",
-  "id": "/mikedoku/",
+  "id": "/sudoku/",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
