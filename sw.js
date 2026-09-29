@@ -4,8 +4,8 @@
 // version number are filled in (see vite.config.ts) and the result is saved
 // as dist/sw.js.
 
-const VERSION = "18096bf94c5a"
-const FILES = ["apple-touch-icon.png","assets/index-B0c8-Euk.css","assets/index-CYMR11zU.js","assets/puzzle.worker-Cl9Fbpo7.js","favicon.svg","icon-192.png","icon-512.png","icon-maskable-512.png","index.html","manifest.webmanifest"]
+const VERSION = "b1170dc4aacf"
+const FILES = ["app.webmanifest","apple-touch-icon.png","assets/index-B0c8-Euk.css","assets/index-CYMR11zU.js","assets/puzzle.worker-Cl9Fbpo7.js","favicon.svg","icon-192.png","icon-512.png","icon-maskable-512.png","index.html"]
 const CACHE = `mikedoku-${VERSION}`
 
 // Install: download every file of this version, then take over straight away.
@@ -36,6 +36,13 @@ self.addEventListener('fetch', (event) => {
     // Opening the app: try the network first (to pick up updates), but fall
     // back to the saved copy if offline or the network is slow.
     event.respondWith(networkFirst(request))
+    return
+  }
+
+  // The app's install details: always ask the network first, so the phone
+  // never installs from an out-of-date copy.
+  if (request.url.endsWith('.webmanifest')) {
+    event.respondWith(fetch(request).catch(() => caches.match(request, { ignoreVary: true })))
     return
   }
 
