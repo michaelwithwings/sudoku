@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="description" content="Sudoku with 8 levels, from Beginner to Master." />
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#1d1d1d" media="(prefers-color-scheme: dark)" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <!-- iPhone / iPad: home-screen icon and full-screen mode -->
+    <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="MikeDoku" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <title>MikeDoku</title>
+    <script>
+      // Apply the saved Light/Dark theme before anything is drawn (no flash).
+      try {
+        var theme = JSON.parse(localStorage.getItem('mikedoku.settings.v1') || '{}').theme
+        if (theme === 'light' || theme === 'dark') document.documentElement.dataset.theme = theme
+      } catch (e) {}
+    </script>
+    <script type="module" crossorigin src="./assets/index-CYMR11zU.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-B0c8-Euk.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
