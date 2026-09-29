@@ -4,7 +4,7 @@
 // version number are filled in (see vite.config.ts) and the result is saved
 // as dist/sw.js.
 
-const VERSION = "e2b8308e576b"
+const VERSION = "18096bf94c5a"
 const FILES = ["apple-touch-icon.png","assets/index-B0c8-Euk.css","assets/index-CYMR11zU.js","assets/puzzle.worker-Cl9Fbpo7.js","favicon.svg","icon-192.png","icon-512.png","icon-maskable-512.png","index.html","manifest.webmanifest"]
 const CACHE = `mikedoku-${VERSION}`
 
